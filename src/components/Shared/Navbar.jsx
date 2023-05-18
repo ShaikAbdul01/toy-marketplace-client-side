@@ -52,30 +52,39 @@ const Navbar = () => {
             Home
           </Link>
           <Link
-            to="/"
+            to="/all-toys"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
           >
             All toys
           </Link>
+
           <Link
-            to="/my-toys"
+            to="/blog"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
           >
-            My toys
-          </Link>
-          <Link
-            to="/all-toys"
-            className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
-          >
-            Add A Toys
+            Blog
           </Link>
         </div>
 
         <div className="md:flex items-center">
           {user && (
-            <FaUserCircle
-              style={{ fontSize: "2rem", marginRight: "10px" }}
-            ></FaUserCircle>
+            <>
+              <Link
+                to="/my-toys"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
+              >
+                My toys
+              </Link>
+              <Link
+                to="/all-toys"
+                className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
+              >
+                Add A Toys
+              </Link>
+              <FaUserCircle
+                style={{ fontSize: "2rem", marginRight: "10px" }}
+              ></FaUserCircle>
+            </>
           )}
 
           {user ? (
@@ -83,15 +92,17 @@ const Navbar = () => {
               to="/"
               className={({ isActive }) => (isActive ? "active" : "default")}
             >
-              <Link>
-                <button
-                  onClick={handleLogout}
-                  type="button"
-                  className="inline-flex items-center text-bold bg-amber-600 border-0 py-2 px-4 text-white"
-                >
-                  Logout
-                </button>
-              </Link>
+              <>
+                <Link>
+                  <button
+                    onClick={handleLogout}
+                    type="button"
+                    className="inline-flex items-center text-bold bg-amber-600 border-0 py-2 px-4 text-white"
+                  >
+                    Logout
+                  </button>
+                </Link>
+              </>
             </Link>
           ) : (
             <div>

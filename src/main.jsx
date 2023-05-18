@@ -7,6 +7,7 @@ import Home from "./components/Pages/Home/Home.jsx";
 import SingUp from "./components/Pages/SingUp";
 import AuthProvider from "./AuthProvider/AuthProvider";
 import SingIn from "./components/Pages/SingIn";
+import AllToys from "./components/Pages/AllToys/AllToys";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "sing-in",
         element: <SingIn></SingIn>,
+      },
+      {
+        path: "all-toys",
+        element: <AllToys></AllToys>,
       },
     ],
   },
