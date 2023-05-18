@@ -1,17 +1,20 @@
-import React from "react";
-
+import Lottie from "lottie-react";
+import car from "../../assets/car-revolving-animation.json";
 const Banner = () => {
   return (
     <div>
       <div className="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64">
-        <div className="container flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
+        <div className=" flex flex-col items-center justify-between h-full  px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
           <div className="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">
             <h1 className="relative mb-4 text-3xl font-black leading-tight text-gray-900 sm:text-6xl xl:mb-8">
-              Build the Next Great Thing
+              The Best Place to Buy Toy Cars
             </h1>
             <p className="pr-0 mb-8 text-base text-gray-600 sm:text-lg xl:text-xl lg:pr-20">
-              Are you ready to start your adventure and start building the next
-              greatest SAAS app on the market?
+              ToyCarPlaza has a wide variety of toy cars to choose from,
+              including classic cars, sports cars, and race cars. We also sell
+              toy car accessories, such as batteries, tracks, and ramps.
+              ToyCarPlaza is the best place to find the perfect toy car for your
+              child.
             </p>
             <a
               href="#_"
@@ -19,11 +22,12 @@ const Banner = () => {
             >
               Signup Today!
             </a>
-            <div className="flex-col hidden mt-12 sm:flex lg:mt-24">
+            {/*  <div className="flex-col hidden mt-12 sm:flex lg:mt-24">
               <p className="mb-4 text-sm font-medium tracking-widest text-gray-500 uppercase">
                 Integrates With
               </p>
               <div className="flex">
+
                 <svg
                   className="h-8 mr-4 text-gray-500 duration-150 cursor-pointer fill-current transition-color hover:text-gray-600"
                   viewBox="0 0 2499 1037"
@@ -35,15 +39,7 @@ const Banner = () => {
                     </g>
                   </g>
                 </svg>
-                {/*  <svg className="h-8 mr-4 text-gray-500 duration-150 cursor-pointer fill-current transition-color hover:text-gray-600"
-                            viewBox="0 0 2350 2315" xmlns="http://www.w3.org/2000/svg">
-                            <g stroke="none" stroke-width="1"></g>
-                            <g>
-                                <path
-                                    d="M1175 0C525.8 0 0 525.8 0 1175c0 552.2 378.9 1010.5 890.1 1139.7-5.9-14.7-8.8-35.3-8.8-55.8v-199.8H734.4c-79.3 0-152.8-35.2-185.1-99.9-38.2-70.5-44.1-179.2-141-246.8-29.4-23.5-5.9-47 26.4-44.1 61.7 17.6 111.6 58.8 158.6 120.4 47 61.7 67.6 76.4 155.7 76.4 41.1 0 105.7-2.9 164.5-11.8 32.3-82.3 88.1-155.7 155.7-190.9-393.6-47-581.6-240.9-581.6-505.3 0-114.6 49.9-223.3 132.2-317.3-26.4-91.1-61.7-279.1 11.8-352.5 176.3 0 282 114.6 308.4 143.9 88.1-29.4 185.1-47 284.9-47 102.8 0 196.8 17.6 284.9 47 26.4-29.4 132.2-143.9 308.4-143.9 70.5 70.5 38.2 261.4 8.8 352.5 82.3 91.1 129.3 202.7 129.3 317.3 0 264.4-185.1 458.3-575.7 499.4 108.7 55.8 185.1 214.4 185.1 331.9V2256c0 8.8-2.9 17.6-2.9 26.4C2021 2123.8 2350 1689.1 2350 1175 2350 525.8 1824.2 0 1175 0z" />
-                            </g>
-                            </g>
-                        </svg> */}
+                
                 <svg
                   className="h-8 mr-4 text-gray-500 duration-150 cursor-pointer fill-current transition-color hover:text-gray-600"
                   viewBox="0 0 2500 2158"
@@ -86,8 +82,8 @@ const Banner = () => {
                   </g>
                 </svg>
               </div>
-            </div>
-            <svg
+            </div> */}
+            {/* <svg
               className="absolute left-0 max-w-md mt-24 -ml-64 left-svg"
               viewBox="0 0 423 423"
               xmlns="http://www.w3.org/2000/svg"
@@ -157,14 +153,11 @@ const Banner = () => {
                   </g>
                 </g>
               </g>
-            </svg>
+            </svg> */}
           </div>
           <div className="relative z-50 flex flex-col items-end justify-center w-full h-full lg:w-1/2 ms:pl-10">
-            <div className="container relative left-0 w-full max-w-4xl lg:absolute xl:max-w-6xl lg:w-screen">
-              <img
-                src="https://img.freepik.com/free-photo/white-easter-car-with-pink-egg-background_23-2149301327.jpg"
-                className="w-full h-auto mt-20 mb-20 ml-0 lg:mt-24 xl:mt-40 lg:mb-0 lg:h-full lg:-ml-12"
-              />
+            <div className="w-full lg:w-4/5 lg:ml-auto h-56  sm:h-96">
+              <Lottie animationData={car} loop={true} />
             </div>
           </div>
         </div>
