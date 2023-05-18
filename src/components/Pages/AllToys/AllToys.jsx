@@ -5,41 +5,41 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
-    fetch(`allToys.json`)
+    fetch(`http://localhost:5000/cars`)
       .then((res) => res.json())
       .then((data) => setToys(data));
-  }, []);
-  console.log(toys);
+  }, [toys]);
+//   console.log(toys);
   return (
     <>
-      <div class="flex flex-col overflow-x-auto">
-        <div class="sm:-mx-6 lg:-mx-8">
-          <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-            <div class="overflow-x-auto">
-              <table class="min-w-full text-left text-sm font-light">
-                <thead class="border-b font-medium dark:border-neutral-500">
+      <div className="flex flex-col overflow-x-auto">
+        <div className="sm:-mx-6 lg:-mx-8">
+          <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+            <div className="overflow-x-auto">
+              <table className="min-w-full text-left text-sm font-light">
+                <thead className="border-b font-medium dark:border-neutral-500">
                   <tr>
-                    <th scope="col" class="px-6 py-4">
+                    <th scope="col" className="px-6 py-4">
                       Seller
                     </th>
-                    <th scope="col" class="px-6 py-4">
+                    <th scope="col" className="px-6 py-4">
                       Toy Name
                     </th>
-                    <th scope="col" class="px-6 py-4">
+                    <th scope="col" className="px-6 py-4">
                       Sub-category
                     </th>
-                    <th scope="col" class="px-6 py-4">
+                    <th scope="col" className="px-6 py-4">
                       Price
                     </th>
-                    <th scope="col" class="px-6 py-4">
+                    <th scope="col" className="px-6 py-4">
                       Available Quantity
                     </th>
-                    <th scope="col" class="px-6 py-4"></th>
+                    <th scope="col" className="px-6 py-4"></th>
                   </tr>
                 </thead>
                 <tbody>
                   {toys?.map((toy) => (
-                    <Toy toy={toy}></Toy>
+                    <Toy key={toy._id} toy={toy}></Toy>
                   ))}
                 </tbody>
               </table>

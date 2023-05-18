@@ -8,6 +8,7 @@ import SingUp from "./components/Pages/SingUp";
 import AuthProvider from "./AuthProvider/AuthProvider";
 import SingIn from "./components/Pages/SingIn";
 import AllToys from "./components/Pages/AllToys/AllToys";
+import CarDetails from "./components/Pages/AllToys/CarDetails";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,12 @@ const router = createBrowserRouter([
       {
         path: "all-toys",
         element: <AllToys></AllToys>,
+      },
+      {
+        path: "carDetails/:id",
+        element: <CarDetails></CarDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/cars/${params.id}`),
       },
     ],
   },
