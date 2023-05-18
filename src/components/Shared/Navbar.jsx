@@ -76,7 +76,7 @@ const Navbar = () => {
                 My toys
               </Link>
               <Link
-                to="/all-toys"
+                to="/add-toys"
                 className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
               >
                 Add A Toys

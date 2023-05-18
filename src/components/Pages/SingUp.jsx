@@ -59,7 +59,7 @@ const SingUp = () => {
         setSuccess("");
       });
   };
- /*  const handleGithub = () => {
+  /*  const handleGithub = () => {
     signInWithGithub()
       .then((result) => {
         const user = result.user;
@@ -182,12 +182,14 @@ const SingUp = () => {
             <p className="text-red-600">{error}</p>
             <p className="text-green-600">{success}</p>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Sing Up</button>
+              <button className="btn text-white p-2 bg-amber-600 border-none">
+                Sing Up
+              </button>
             </div>
             <p>
               Already have an account?{" "}
               <Link to="/sing-in">
-                <span className="text-blue-500">Sing In</span>
+                <span className="text-amber-600">Sing In</span>
               </Link>
             </p>
           </div>

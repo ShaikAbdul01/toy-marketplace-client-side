@@ -9,9 +9,9 @@ import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const SingIn = () => {
   const navigation = useNavigation();
-  /*  if (navigation.state === "loading") {
-    return <LoadingSpinner></LoadingSpinner>;
-  } */
+  if (navigation.state === "loading") {
+    return <progress className="progress w-56"></progress>;
+  }
   const { signIn, signInWithGoogle, signInWithGithub, resetPassword } =
     useContext(AuthContext);
   const navigate = useNavigate();
@@ -21,7 +21,7 @@ const SingIn = () => {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  //   const from = location.state?.from?.pathname || "/chef";
+  const from = location.state?.from?.pathname || "/";
 
   const handleSingin = (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ const SingIn = () => {
         console.log(loggedUser);
         setSuccess("Login Success");
         e.target.reset();
-        // navigate(from, { replace: true });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error.message);
@@ -185,12 +185,12 @@ const SingIn = () => {
             <p className="text-red-600">{error}</p>
             <p className="text-green-600">{success}</p>
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Sing In</button>
+              <button className="btn text-white p-2 bg-amber-600 border-none">Sing In</button>
             </div>
             <p>
               Do not have an account?{" "}
               <Link to="/sing-up">
-                <span className="text-blue-500">Create an account</span>
+                <span className="text-amber-600">Create an account</span>
               </Link>
             </p>
           </div>
