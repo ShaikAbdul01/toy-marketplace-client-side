@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -33,36 +34,36 @@ const Navbar = () => {
           isOpen ? "block" : "hidden"
         }`}
       >
-        <div className="text-sm">
-          <a
-            href="#"
+        <div className="text-lg text-bold">
+          <Link
+            to="/"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
           >
-            First Link
-          </a>
-          <a
-            href="#"
+            Home
+          </Link>
+          <Link
+            to="/"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
           >
-            Second Link
-          </a>
-          <a
-            href="#"
+            All toys
+          </Link>
+          <Link
+            to="/my-toys"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
           >
-            Third Link
-          </a>
-          <a
-            href="#"
+            My toys
+          </Link>
+          <Link
+            to="/all-toys"
             className="block mt-4 lg:inline-block lg:mt-0 text-white-200 mr-4"
           >
-            Fourth Link
-          </a>
+            Add A Toys
+          </Link>
         </div>
         <div>
-          <button className="inline-flex items-center bg-amber-500 border-0 py-2 px-4 text-white">
-            Click Me
-          </button>
+          <Link to="/singIn"><button className="inline-flex items-center text-bold bg-amber-600 border-0 py-2 px-4 text-white">
+            Sign In
+          </button></Link>
         </div>
       </div>
     </nav>

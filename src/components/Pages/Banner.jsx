@@ -1,5 +1,6 @@
 import Lottie from "lottie-react";
 import car from "../../assets/car-revolving-animation.json";
+import { Link } from "react-router-dom";
 const Banner = () => {
   return (
     <div>
@@ -16,12 +17,12 @@ const Banner = () => {
               ToyCarPlaza is the best place to find the perfect toy car for your
               child.
             </p>
-            <a
+            <Link
               href="#_"
-              className="relative self-start inline-block w-auto px-8 py-4 mx-auto mt-0 text-base font-bold text-white bg-indigo-600 border-t border-gray-200 rounded-md shadow-xl sm:mt-1 fold-bold lg:mx-0"
+              className="relative self-start inline-block w-auto px-8 py-4 mx-auto mt-0 text-base font-bold text-white bg-amber-600 border-t border-gray-200 rounded-md shadow-xl sm:mt-1 fold-bold lg:mx-0"
             >
-              Signup Today!
-            </a>
+              Signup
+            </Link>
             {/*  <div className="flex-col hidden mt-12 sm:flex lg:mt-24">
               <p className="mb-4 text-sm font-medium tracking-widest text-gray-500 uppercase">
                 Integrates With
