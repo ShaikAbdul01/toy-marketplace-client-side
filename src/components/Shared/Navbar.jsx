@@ -1,7 +1,17 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    logOut()
+      .then()
+      .catch((error) => {
+        console.log(error.message);
+      });
+  };
   return (
     <nav className="flex items-center justify-between flex-wrap p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6 lg:mr-72">
@@ -60,10 +70,38 @@ const Navbar = () => {
             Add A Toys
           </Link>
         </div>
-        <div>
-          <Link to="/singIn"><button className="inline-flex items-center text-bold bg-amber-600 border-0 py-2 px-4 text-white">
-            Sign In
-          </button></Link>
+
+        <div className="md:flex items-center">
+          {user && (
+            <FaUserCircle
+              style={{ fontSize: "2rem", marginRight: "10px" }}
+            ></FaUserCircle>
+          )}
+
+          {user ? (
+            <Link
+              to="/"
+              className={({ isActive }) => (isActive ? "active" : "default")}
+            >
+              <Link>
+                <button
+                  onClick={handleLogout}
+                  type="button"
+                  className="inline-flex items-center text-bold bg-amber-600 border-0 py-2 px-4 text-white"
+                >
+                  Logout
+                </button>
+              </Link>
+            </Link>
+          ) : (
+            <div>
+              <Link to="/sing-in">
+                <button className="inline-flex items-center text-bold bg-amber-600 border-0 py-2 px-4 text-white">
+                  Sign In
+                </button>
+              </Link>
+            </div>
+          )}
         </div>
       </div>
     </nav>

@@ -15,7 +15,7 @@ const Gallery = () => {
   return (
     <>
     <div className="text-center font-bold mb-8 text-5xl text-amber-600">Our Collection</div>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-28">
         <div className="grid gap-4">
           <div>
             <img
