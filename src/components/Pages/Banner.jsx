@@ -18,7 +18,7 @@ const Banner = () => {
               child.
             </p>
             <Link
-              href="#_"
+              to="/sing-up"
               className="relative self-start inline-block w-auto px-8 py-4 mx-auto mt-0 text-base font-bold text-white bg-amber-600 border-t border-gray-200 rounded-md shadow-xl sm:mt-1 fold-bold lg:mx-0"
             >
               Signup
