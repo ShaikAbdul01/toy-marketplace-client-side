@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-
+import Rating from "react-rating";
+import { BsStar, BsStarFill } from "react-icons/bs";
 const CategoryTabs = () => {
   const [categoriesData, setCategoriesData] = useState([]);
   useEffect(() => {
@@ -58,12 +59,26 @@ const CategoryTabs = () => {
                           Price: ${toy.price}
                         </p>
                         <p className="text-gray-600 text-sm">
-                          Rating: {toy.rating}
+                          <div className="">
+                            <Rating
+                              className="mr-2"
+                              placeholderRating={toy.rating}
+                              emptySymbol={<BsStar></BsStar>}
+                              placeholderSymbol={
+                                <BsStarFill className="text-warning"></BsStarFill>
+                              }
+                              fullSymbol={<BsStarFill></BsStarFill>}
+                            />
+                            {toy.rating}
+                          </div>
                         </p>
-                        <button className="bg-amber-500 text-white py-2 px-4 mt-2 rounded hover:bg-amber-600 focus:outline-none focus:bg-amber-600 duration-1000"><Link to={`/categoryDetails/${category.name}/${subCategory.name}/${toy.name}/${toy._id}`} >
-                          View Details
-                        </Link></button>
-                        
+                        <button className="bg-amber-500 text-white py-2 px-4 mt-2 rounded hover:bg-amber-600 focus:outline-none focus:bg-amber-600 duration-1000">
+                          <Link
+                            to={`/categoryDetails/${category.name}/${subCategory.name}/${toy.name}/${toy._id}`}
+                          >
+                            View Details
+                          </Link>
+                        </button>
                       </div>
                     ))}
                   </div>
