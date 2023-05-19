@@ -15,6 +15,7 @@ import Blog from "./components/Pages/Blog";
 import MyToys from "./components/Pages/AddToys/MyToys";
 import ErrorPage from "./components/Pages/ErrorPage";
 import Updates from "./components/Pages/Updates/Updates";
+import CategoryDetails from "./components/Pages/CategoryDetails";
 // import MyToys from "./components/Pages/AddToys/MyToys";
 
 const router = createBrowserRouter([
@@ -72,6 +73,15 @@ const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`http://localhost:5000/addToys/id/${params.id}`),
       },
+      {
+        path:"/categoryDetails/:categoryName/:subCategoryName/:toyName/:toyId",
+        element: <CategoryDetails></CategoryDetails>,
+        loader:({ params }) =>
+        fetch(
+          `http://localhost:5000/carsToy/${params.categoryName}/${params.subCategoryName}/${params.toyName}`
+        ).then((res) => res.json())
+      },
+      ,
     ],
   },
 ]);

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 
@@ -25,7 +26,7 @@ const CategoryTabs = () => {
             {categoriesData?.categories?.map((category) => (
               <Tab
                 key={category.name}
-                className="px-4 py-2 text-gray-600 hover:text-gray-800 focus:outline-none focus:text-gray-800"
+                className="px-4 py-2 text-white bg-amber-600 hover:bg-amber-800 focus:outline-none focus:text-gray-800 duration-1000"
               >
                 {category.name}
               </Tab>
@@ -34,17 +35,17 @@ const CategoryTabs = () => {
 
           {categoriesData?.categories?.map((category) => (
             <TabPanel key={category.name}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4 shadow-2xl p-4">
                 {category.subCategories.map((subCategory) => (
                   <div
                     key={subCategory.name}
-                    className="bg-white rounded shadow p-4"
+                    className="bg-white rounded shadow-2xl p-4"
                   >
                     <h3 className="text-lg font-semibold mb-2">
                       {subCategory.name}
                     </h3>
                     {subCategory.toys.map((toy) => (
-                      <div key={toy.name} className="mb-4">
+                      <div key={toy.name} className="mb-8 space-y-4">
                         <img
                           src={toy.picture}
                           alt={toy.name}
@@ -59,9 +60,10 @@ const CategoryTabs = () => {
                         <p className="text-gray-600 text-sm">
                           Rating: {toy.rating}
                         </p>
-                        <button className="bg-blue-500 text-white py-2 px-4 mt-2 rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+                        <button className="bg-amber-500 text-white py-2 px-4 mt-2 rounded hover:bg-amber-600 focus:outline-none focus:bg-amber-600 duration-1000"><Link to={`/categoryDetails/${category.name}/${subCategory.name}/${toy.name}/${toy._id}`} >
                           View Details
-                        </button>
+                        </Link></button>
+                        
                       </div>
                     ))}
                   </div>
