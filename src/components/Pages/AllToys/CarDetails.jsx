@@ -45,7 +45,7 @@ const CarDetails = () => {
                   {more ? (
                     <>
                       <p className=" text-gray-500 text-sm">
-                        {description.substring(0, 100)}.....
+                        {description.substring(0, 30)}...
                       </p>
                       <span
                         className="cursor-pointer opacity-50 text-gray-900 hover:opacity-100 inline-block text-xs leading-none border-b border-gray-900"
@@ -56,7 +56,7 @@ const CarDetails = () => {
                     </>
                   ) : (
                     <>
-                      <p className=" text-gray-900">{description}.....</p>
+                      <p className=" text-gray-900">{description}...</p>
                       <span
                         className="cursor-pointer opacity-50 text-gray-900 hover:opacity-100 inline-block text-xs leading-none border-b border-gray-900"
                         onClick={() => setMore(!more)}
