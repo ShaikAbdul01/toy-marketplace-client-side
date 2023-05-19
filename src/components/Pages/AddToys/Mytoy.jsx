@@ -1,6 +1,6 @@
-import React from "react";
-import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
-const Mytoy = ({ toy }) => {
+import { Link } from "react-router-dom";
+
+const Mytoy = ({ toy,handleDelete }) => {
   const {
     _id,
     carName,
@@ -11,7 +11,10 @@ const Mytoy = ({ toy }) => {
     sellerName,
     subCategory,
   } = toy;
-//   console.log(toy);
+  //   console.log(toy);
+
+
+  
   return (
     <>
       <tr>
@@ -31,10 +34,17 @@ const Mytoy = ({ toy }) => {
         <td>{rating}</td>
 
         <th>
-          <button className="bg-amber-600 text-white p-2 mx-2"> <FaRegEdit></FaRegEdit>
+          <button
+            onClick={() => handleDelete(_id)}
+            className="bg-amber-600 text-white p-2 mx-2"
+          >
+            {" "}
+            Delete
           </button>
-          <button className="bg-amber-600 text-white p-2"> <FaRegTrashAlt></FaRegTrashAlt>
-          </button>
+          <Link to={`/my-toys/updates/${_id}`} className="bg-amber-600 text-white p-2">
+            {" "}
+            Edit
+          </Link>
         </th>
       </tr>
     </>

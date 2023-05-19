@@ -14,13 +14,14 @@ import AddToys from "./components/Pages/AddToys/AddToys";
 import Blog from "./components/Pages/Blog";
 import MyToys from "./components/Pages/AddToys/MyToys";
 import ErrorPage from "./components/Pages/ErrorPage";
+import Updates from "./components/Pages/Updates/Updates";
 // import MyToys from "./components/Pages/AddToys/MyToys";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement:<ErrorPage></ErrorPage>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
         path: "add-toys",
         element: <AddToys></AddToys>,
       },
-      
+
       {
         path: "blog",
         element: <Blog></Blog>,
@@ -64,6 +65,12 @@ const router = createBrowserRouter([
             <MyToys></MyToys>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "my-toys/updates/:id",
+        element: <Updates></Updates>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/addToys/id/${params.id}`),
       },
     ],
   },

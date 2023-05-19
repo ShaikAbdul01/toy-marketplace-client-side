@@ -1,0 +1,121 @@
+{
+  "categories": [
+    {
+      "name": "Sports Car",
+      "subCategories": [
+        {
+          "name": "Sports Convertible",
+          "toys": [
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCEZ9gCl9vxPcMA9Lwm7eTDft6nz-FTlvx8Q&usqp=CAU",
+              "name": "Red Sports Convertible",
+              "price": 29.99,
+              "rating": 4.5
+            },
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAtvC52N_Mv2XCNduQba3RlXg0QzbHhsn-sw&usqp=CAU",
+              "name": "Blue Sports Convertible",
+              "price": 34.99,
+              "rating": 4.2
+            }
+          ]
+        },
+        {
+          "name": "Muscle Car",
+          "toys": [
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwLajH_-zjdZcomAEG-vGa7eMsdbDhNqTKFA&usqp=CAU",
+              "name": "Yellow Muscle Car",
+              "price": 27.99,
+              "rating": 4.7
+            },
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSllmAUZfMaMGSe9WOvDPa5lyJVb3sHdew1zw&usqp=CAU",
+              "name": "Black Muscle Car",
+              "price": 32.99,
+              "rating": 4.8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Regular Car",
+      "subCategories": [
+        {
+          "name": "Sedan",
+          "toys": [
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ763i7LTPm7X0HnPkx7tMYJxBef2Q8tq5ynw&usqp=CAU",
+              "name": "Silver Sedan",
+              "price": 24.99,
+              "rating": 4.3
+            },
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUweo8gANuinlQijiEGx2f04EJpT2MEP8d5w&usqp=CAU",
+              "name": "White Sedan",
+              "price": 26.99,
+              "rating": 4.1
+            }
+          ]
+        },
+        {
+          "name": "Hatchback",
+          "toys": [
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbJYeEFs5pbwTL0IsgVWmp41hqthT9MyeujA&usqp=CAU",
+              "name": "Red Hatchback",
+              "price": 22.99,
+              "rating": 4.4
+            },
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTITFNPokzyR6o8Gk6VLJn6vDJLX2SuI23JHQ&usqp=CAU",
+              "name": "Blue Hatchback",
+              "price": 25.99,
+              "rating": 4.6
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mini Police Car",
+      "subCategories": [
+        {
+          "name": "Patrol Car",
+          "toys": [
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFMPttjddkZ6cW1zkkl7U6EmSotRyohaOb4A&usqp=CAU",
+              "name": "Black Patrol Car",
+              "price": 19.99,
+              "rating": 4
+            },
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAP6yK1o0mX0JDR8yGyLZ4AFmHP3_sefMulw&usqp=CAU",
+              "name": "White Patrol Car",
+              "price": 21.99,
+              "rating": 4.2
+            }
+          ]
+        },
+        {
+          "name": "SWAT Van",
+          "toys": [
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2aacOaA_93ejLbTkm_ou_6R596q1kwPvkyw&usqp=CAU",
+              "name": "SWAT Van with Lights",
+              "price": 29.99,
+              "rating": 4.6
+            },
+            {
+              "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuQ4OxIgIi88_qYoadcefR1P7BYmewXyvUMQ&usqp=CAU",
+              "name": "SWAT Van with Accessories",
+              "price": 32.99,
+              "rating": 4.8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
