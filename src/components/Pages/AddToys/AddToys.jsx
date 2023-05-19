@@ -1,9 +1,17 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import MyToys from "./MyToys";
 
 const AddToys = () => {
     const {user}=useContext(AuthContext)
+    const [email, setEmail] = useState('');
+
+const handleEmailChange = (event) => {
+  setEmail(event.target.value);
+};
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -44,13 +52,14 @@ const AddToys = () => {
             Swal.fire("Good job!", "Toy Added successfull!", "success");
           }
         });
-   
-
-
 }
+
 
 return (
   <>
+  {
+    <MyToys email={email}></MyToys>
+  }
     <form onSubmit={handleSubmit} className="mt-12">
       <div className="relative z-0 w-full mb-6 group">
         <input
@@ -111,7 +120,9 @@ return (
             id="floating_email"
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
             placeholder=""
-            defaultValue={user?.email}
+            
+            value={email}
+             onFocus={handleEmailChange}
             required
           />
           <label
