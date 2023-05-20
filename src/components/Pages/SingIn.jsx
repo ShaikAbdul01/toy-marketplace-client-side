@@ -11,7 +11,7 @@ import { Helmet } from "react-helmet";
 const SingIn = () => {
   const navigation = useNavigation();
   if (navigation.state === "loading") {
-    return <progress className="progress w-56"></progress>;
+    return <progress className="progress w-56"></progress>
   }
   const { signIn, signInWithGoogle, resetPassword } = useContext(AuthContext);
   const navigate = useNavigate();
