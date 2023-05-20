@@ -75,7 +75,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/categoryDetails/:categoryName/:subCategoryName/:toyName/:toyId",
-        element: <CategoryDetails></CategoryDetails>,
+        element:<PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute> ,
         loader:({ params }) =>
         fetch(
           `http://localhost:5000/carsToy/${params.categoryName}/${params.subCategoryName}/${params.toyName}`

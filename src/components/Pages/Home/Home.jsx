@@ -1,3 +1,4 @@
+import Achievements from "../Achievements";
 import Banner from "../Banner";
 import CategoryTabs from "../CategoryTabs";
 import Gallery from "../Gallery";
@@ -8,6 +9,7 @@ const Home = () => {
             <Banner></Banner>
             <Gallery></Gallery>
             <CategoryTabs></CategoryTabs>
+            <Achievements></Achievements>
         </div>
     );
 };
