@@ -75,9 +75,10 @@ const MyToys = () => {
                 Price{" "}
                 <button onClick={handleSort}>
                   {sortOrder === "asc" ? (
-                    <FaArrowCircleUp></FaArrowCircleUp>
+                   <div className="flex gap-1 items-center">(Ascending <FaArrowCircleUp></FaArrowCircleUp>)</div> 
                   ) : (
-                    <FaArrowCircleDown></FaArrowCircleDown>
+                    <div className="flex gap-1 items-center">(Descending <FaArrowCircleDown></FaArrowCircleDown>)</div>
+                    
                   )}
                 </button>
               </th>
