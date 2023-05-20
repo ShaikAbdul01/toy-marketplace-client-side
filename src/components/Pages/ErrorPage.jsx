@@ -1,8 +1,14 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
+  const pageTitle = "ToyCarPllaza | Error Page";
+
   return (
-    <div>
+    <>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <main className="h-screen w-full flex flex-col justify-center items-center bg-[#1A2238]">
         <h1 className="text-9xl font-extrabold text-white tracking-widest">
           404
@@ -19,7 +25,7 @@ const ErrorPage = () => {
           </Link>
         </button>
       </main>
-    </div>
+    </>
   );
 };
 

@@ -1,13 +1,20 @@
 import Rating from "react-rating";
 import { BsStar, BsStarFill } from "react-icons/bs";
 import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const CategoryDetails = () => {
   const data = useLoaderData();
   console.log(data);
   const { name, picture, price, rating } = data;
+
+  const pageTitle = "ToyCarPllaza | Category Details";
+
   return (
     <>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <div className="mt-6">
         <div className="min-w-screen min-h-screen bg-amber-600 flex items-center p-5 lg:p-10 overflow-hidden relative">
           <div className="w-full max-w-6xl rounded bg-white shadow-xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">

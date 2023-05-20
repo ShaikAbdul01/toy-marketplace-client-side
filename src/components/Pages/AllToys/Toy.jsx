@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const Toy = ({ toy }) => {
@@ -11,8 +12,14 @@ const Toy = ({ toy }) => {
     toyCarName,
     availableQuantity,
   } = toy;
+
+  const pageTitle = "ToyCarPllaza | Toy";
+
   return (
     <>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <tr className="border-b dark:border-neutral-500">
         <td className="whitespace-nowrap px-6 py-4 font-medium">
           {sellerName}

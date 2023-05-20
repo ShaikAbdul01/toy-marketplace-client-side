@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -61,8 +62,14 @@ const Updates = () => {
         }
       });
   };
+
+  const pageTitle = "ToyCarPllaza | Update";
+
   return (
     <>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <form onSubmit={handleUpdated} className="mt-12">
         <div className="relative z-0 w-full mb-6 group">
           <input

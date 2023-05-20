@@ -1,6 +1,7 @@
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
-const Mytoy = ({ toy,handleDelete }) => {
+const Mytoy = ({ toy, handleDelete }) => {
   const {
     _id,
     carName,
@@ -13,10 +14,16 @@ const Mytoy = ({ toy,handleDelete }) => {
   } = toy;
   //   console.log(toy);
 
+  const handleDeleteClick = () => {
+    handleDelete(_id);
+  };
+  const pageTitle = "ToyCarPllaza | My toys";
 
-  
   return (
     <>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <tr>
         <td>
           <div className="avatar">
@@ -35,16 +42,15 @@ const Mytoy = ({ toy,handleDelete }) => {
 
         <th>
           <button
-            onClick={() => handleDelete(_id)}
+            onClick={handleDeleteClick}
             className="bg-amber-600 text-white p-2 mx-2"
           >
             {" "}
             Delete
           </button>
-          <Link to={`/my-toys/updates/${_id}`} className="bg-amber-600 text-white p-2">
-            {" "}
-            Edit
-          </Link>
+          <button className="bg-amber-600 text-white p-2">
+            <Link to={`/my-toys/updates/${_id}`}> Edit</Link>
+          </button>
         </th>
       </tr>
     </>

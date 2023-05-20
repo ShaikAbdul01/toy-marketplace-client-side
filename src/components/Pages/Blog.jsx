@@ -1,6 +1,13 @@
+import { Helmet } from "react-helmet";
+
 const Blog = () => {
+  const pageTitle = "ToyCarPllaza | Blog";
+
   return (
     <>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <div className="mt-10 bg-gray-100 p-6 rounded shadow-lg mb-10">
         <h1 className="text-4xl font-extrabold text-center mb-10">Question</h1>
         <article className="bg-amber-300 p-5 rounded-xl shadow-2xl mb-5">

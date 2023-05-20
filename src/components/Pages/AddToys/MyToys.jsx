@@ -6,22 +6,17 @@ import { FaArrowCircleDown, FaArrowCircleUp } from "react-icons/fa";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
-  const [removes, setRemoves] = useState([]);
   const userEmail = user?.email;
   const [myToys, setMyToys] = useState([]);
-  //   console.log(userEmail);
-
-  const [sortOrder, setSortOrder] = useState("asc"); // Sort order state
+  const [sortOrder, setSortOrder] = useState("asc");
 
   useEffect(() => {
     fetch(`http://localhost:5000/addToys/email/${userEmail}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, []);
-  //   console.log(myToys);
 
   const handleDelete = (_id) => {
-    console.log(_id);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -37,16 +32,18 @@ const MyToys = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
             if (data.deletedCount > 0) {
               Swal.fire(
                 "Deleted!",
                 "Your toy product has been deleted.",
                 "success"
               );
-              const remaning = removes.filter((remove) => remove._id !== id);
-              setRemoves(remaning);
+              const updatedToys = myToys.filter((toy) => toy._id !== _id);
+              setMyToys(updatedToys);
             }
+          })
+          .catch((error) => {
+            console.error("Error deleting toy:", error);
           });
       }
     });
@@ -63,6 +60,7 @@ const MyToys = () => {
     setSortOrder(sortOrder === "asc" ? "desc" : "asc");
     setMyToys(sortedToys);
   };
+
   return (
     <>
       <div className="overflow-x-auto w-full">

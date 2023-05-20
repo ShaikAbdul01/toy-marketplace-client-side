@@ -108,27 +108,27 @@ const Footer = () => {
                 Contact
               </h6>
               <p className="mb-4 flex items-center justify-center md:justify-start">
-                <div className="w-6">
+                <span className="w-6">
                   <FaHome></FaHome>
-                </div>
+                </span>
                 New York, NY 10012, US
               </p>
               <p className="mb-4 flex items-center justify-center md:justify-start">
-                <div className="w-6">
+                <span className="w-6">
                   <FaEnvelope></FaEnvelope>
-                </div>
+                </span>
                 info@example.com
               </p>
               <p className="mb-4 flex items-center justify-center md:justify-start">
-                <div className="w-6">
+                <span className="w-6">
                   <FaMobileAlt></FaMobileAlt>
-                </div>
+                </span>
                 + 01 234 567 88
               </p>
               <p className="flex items-center justify-center md:justify-start">
-                <div className="w-6">
+                <span className="w-6">
                   <FaPrint></FaPrint>
-                </div>
+                </span>
                 + 01 234 567 89
               </p>
             </div>

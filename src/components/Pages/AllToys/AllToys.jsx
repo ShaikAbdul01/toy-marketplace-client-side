@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Toy from "./Toy";
+import { Helmet } from "react-helmet";
 
 const AllToys = () => {
   const [toys, setToys] = useState([]);
@@ -9,9 +10,15 @@ const AllToys = () => {
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, [toys]);
-//   console.log(toys);
+  //   console.log(toys);
+
+  const pageTitle = "ToyCarPllaza | All toys";
+
   return (
     <>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <div className="flex flex-col overflow-x-auto">
         <div className="sm:-mx-6 lg:-mx-8">
           <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">

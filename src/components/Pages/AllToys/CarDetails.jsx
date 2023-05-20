@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 
 const CarDetails = () => {
@@ -15,8 +16,14 @@ const CarDetails = () => {
     picture,
     description,
   } = carDetails;
+
+  const pageTitle = "ToyCarPllaza | Car Details";
+
   return (
     <>
+      <Helmet>
+        <title>{pageTitle}</title>
+      </Helmet>
       <div className="mt-6">
         <div className="min-w-screen min-h-screen bg-amber-600 flex items-center p-5 lg:p-10 overflow-hidden relative">
           <div className="w-full max-w-6xl rounded bg-white shadow-2xl p-10 lg:p-20 mx-auto text-gray-800 relative md:text-left">
@@ -74,7 +81,6 @@ const CarDetails = () => {
                     <span className="font-bold text-5xl leading-none align-baseline">
                       {price}
                     </span>
-                  
                   </div>
                   <div className="inline-block align-bottom">
                     <button className="bg-amber-600 opacity-75 hover:opacity-100 text-white-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold">
