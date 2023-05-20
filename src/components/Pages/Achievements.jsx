@@ -2,9 +2,9 @@ import React from "react";
 import CountUp from "react-countup";
 const Achievements = () => {
   const achievementsData = [
-    { title: "Happy Customers", value: 18027 },
+    { title: "Happy Customers", value: 38027 },
     { title: "Years of Experience", value: 7 },
-    { title: "Cars Sold", value: 50000 },
+    { title: "Cars Sold", value: 48087 },
   ];
 
   return (
@@ -14,7 +14,7 @@ const Achievements = () => {
       </div>
 
       <section className="bg-gray-100 py-10">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className=" mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {achievementsData.map((achievement, index) => (
               <div
@@ -27,7 +27,7 @@ const Achievements = () => {
                 <CountUp
                   start={0}
                   end={achievement.value}
-                  duration={5}
+                  duration={10}
                   separator=","
                   className="text-5xl font-bold text-amber-500"
                 />
