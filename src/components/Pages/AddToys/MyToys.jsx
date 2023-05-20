@@ -11,7 +11,7 @@ const MyToys = () => {
   const [sortOrder, setSortOrder] = useState("asc");
 
   useEffect(() => {
-    fetch(`http://localhost:5000/addToys/email/${userEmail}`)
+    fetch(`https://toy-car-plaza-server.vercel.app/addToys/email/${userEmail}`)
       .then((res) => res.json())
       .then((data) => setMyToys(data));
   }, []);
@@ -27,7 +27,7 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/addToys/id/${_id}`, {
+        fetch(`https://toy-car-plaza-server.vercel.app/addToys/id/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

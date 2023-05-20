@@ -48,7 +48,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/cars/${params.id}`),
+          fetch(`https://toy-car-plaza-server.vercel.app/cars/${params.id}`),
       },
       {
         path: "add-toys",
@@ -71,14 +71,14 @@ const router = createBrowserRouter([
         path: "my-toys/updates/:id",
         element: <Updates></Updates>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/addToys/id/${params.id}`),
+          fetch(`https://toy-car-plaza-server.vercel.app/addToys/id/${params.id}`),
       },
       {
         path:"/categoryDetails/:categoryName/:subCategoryName/:toyName/:toyId",
         element:<PrivateRoute><CategoryDetails></CategoryDetails></PrivateRoute> ,
         loader:({ params }) =>
         fetch(
-          `http://localhost:5000/carsToy/${params.categoryName}/${params.subCategoryName}/${params.toyName}`
+          `https://toy-car-plaza-server.vercel.app/carsToy/${params.categoryName}/${params.subCategoryName}/${params.toyName}`
         ).then((res) => res.json())
       },
       ,

@@ -18,7 +18,7 @@ const Updates = () => {
     sellerName,
     subCategory,
   } = updatesDetails;
-
+console.log(updatesDetails);
   const handleUpdated = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -42,10 +42,12 @@ const Updates = () => {
       quantity,
       description,
     };
-    fetch(`http://localhost:5000/addToys/id/${_id}`, {
+
+
+    fetch(`https://toy-car-plaza-server.vercel.app/addToys/id/${_id}`, {
       method: "PUT",
       headers: {
-        "content-type": "application/json",
+        "content-Type": "application/json",
       },
       body: JSON.stringify(addtoy),
     })
@@ -62,6 +64,9 @@ const Updates = () => {
         }
       });
   };
+
+
+  
 
   const pageTitle = "ToyCarPllaza | Update";
 
