@@ -1,9 +1,17 @@
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Lottie from "lottie-react";
 import car from "../../assets/car-revolving-animation.json";
 import { Link } from "react-router-dom";
 const Banner = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, // Animation duration
+    });
+  }, []);
   return (
-    <div>
+    <div data-aos="fade-up">
       <div className="relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-48 ">
         <div className=" flex flex-col items-center justify-between h-full  px-8 mx-auto -mt-32 lg:flex-row xl:px-0">
           <div className="z-30 flex flex-col items-center w-full max-w-xl pt-48 text-center lg:items-start lg:w-1/2 lg:pt-20 xl:pt-40 lg:text-left">

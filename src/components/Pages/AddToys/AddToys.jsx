@@ -48,7 +48,7 @@ const AddToys = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="mt-12">
+      <form onSubmit={handleSubmit} className="mt-12 mx-2">
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="text"
