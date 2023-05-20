@@ -17,7 +17,7 @@ const CategoryTabs = () => {
   }, []);
   return (
     <>
-      <div className="text-center font-bold text-5xl text-amber-600 mb-12">
+      <div className="text-center font-bold text-3xl lg:text-5xl text-amber-600 mb-12">
         Shop By Category
       </div>
 

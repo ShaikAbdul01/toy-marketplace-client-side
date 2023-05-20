@@ -9,7 +9,7 @@ const Achievements = () => {
 
   return (
     <>
-      <div className="text-center font-bold mt-12 mb-8 text-5xl text-amber-600">
+      <div className="text-center font-bold mt-12 mb-8 text-3xl lg:text-5xl text-amber-600">
         Our Achievements
       </div>
 

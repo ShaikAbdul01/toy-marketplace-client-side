@@ -16,7 +16,9 @@ const Navbar = () => {
     <nav className="flex items-center justify-between flex-wrap p-6">
       <div className="flex items-center flex-shrink-0 text-white mr-6 lg:mr-72">
         {/* <img src={locofy} className="w-100 h-10 mr-2" alt="Logo" /> */}
-        <h2 className="text-3xl font-bold text-black">ToyCarPlaza</h2>
+        <h2 className="text-xl lg:text-3xl font-bold text-black">
+          ToyCarPlaza
+        </h2>
       </div>
       <div className="block lg:hidden">
         <button
