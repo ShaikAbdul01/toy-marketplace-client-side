@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 
 const Updates = () => {
   const updatesDetails = useLoaderData();
-  console.log(updatesDetails);
+  // console.log(updatesDetails);
 
   const {
     _id,
@@ -18,19 +18,19 @@ const Updates = () => {
     sellerName,
     subCategory,
   } = updatesDetails;
-console.log(updatesDetails);
+  console.log(updatesDetails);
   const handleUpdated = (e) => {
     e.preventDefault();
     const form = e.target;
-    const picture = form?.picture.value;
-    const carName = form?.carName.value;
-    const sellerName = form?.sellerName.value;
-    const email = form?.email.value;
-    const subCategory = form?.subCategory.value;
-    const price = form?.price.value;
-    const rating = form?.rating.value;
-    const quantity = form?.quantity.value;
-    const description = form?.description.value;
+    const picture = form.picture.value;
+    const carName = form.carName.value;
+    const sellerName = form.sellerName.value;
+    const email = form.email.value;
+    const subCategory = form.subCategory.value;
+    const price = form.price.value;
+    const rating = form.rating.value;
+    const quantity = form.quantity.value;
+    const description = form.description.value;
     const addtoy = {
       picture,
       carName,
@@ -43,11 +43,30 @@ console.log(updatesDetails);
       description,
     };
 
+    /*  fetch(`https://toy-car-plaza-server.vercel.app/addToys/id/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addtoy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Success!",
+            text: "Toy data updateded successfully",
+            icon: "success",
+            confirmButtonText: "Cool",
+          });
+        }
+      }); */
 
     fetch(`https://toy-car-plaza-server.vercel.app/addToys/id/${_id}`, {
       method: "PUT",
       headers: {
-        "content-Type": "application/json",
+        "content-type": "application/json",
       },
       body: JSON.stringify(addtoy),
     })
@@ -65,9 +84,6 @@ console.log(updatesDetails);
       });
   };
 
-
-  
-
   const pageTitle = "ToyCarPllaza | Update";
 
   return (
@@ -84,7 +100,6 @@ console.log(updatesDetails);
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
             placeholder=""
             defaultValue={picture}
-            required
           />
           <label
             htmlFor="floating_picture"
@@ -102,7 +117,6 @@ console.log(updatesDetails);
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
               placeholder=""
               defaultValue={carName}
-              required
             />
             <label
               htmlFor="floating_car_name"
@@ -119,7 +133,6 @@ console.log(updatesDetails);
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
               placeholder=""
               defaultValue={sellerName}
-              required
             />
             <label
               htmlFor="floating_seller_name"
@@ -138,7 +151,6 @@ console.log(updatesDetails);
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
               placeholder=""
               defaultValue={email}
-              required
             />
             <label
               htmlFor="floating_email"
@@ -155,7 +167,6 @@ console.log(updatesDetails);
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
               placeholder=" "
               defaultValue={subCategory}
-              required
             />
             <label
               htmlFor="floating_sub_category"
@@ -174,7 +185,6 @@ console.log(updatesDetails);
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
               placeholder=""
               defaultValue={price}
-              required
             />
             <label
               htmlFor="floating_Price"
@@ -191,7 +201,6 @@ console.log(updatesDetails);
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
               placeholder=" "
               defaultValue={rating}
-              required
             />
             <label
               htmlFor="floating_Rating"
@@ -210,7 +219,6 @@ console.log(updatesDetails);
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
               placeholder=" "
               defaultValue={quantity}
-              required
             />
             <label
               htmlFor="floating_available_quantity"
@@ -227,7 +235,6 @@ console.log(updatesDetails);
               className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-amber-500 focus:outline-none focus:ring-0 focus:border-amber-600 peer"
               placeholder=""
               defaultValue={description}
-              required
             />
             <label
               htmlFor="floating_description"
@@ -237,12 +244,11 @@ console.log(updatesDetails);
             </label>
           </div>
         </div>
-        <button
+        <input
           type="submit"
+          value="Update Toy"
           className="text-white bg-amber-700 hover:bg-amber-800 focus:ring-4 focus:outline-none focus:ring-amber-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-amber-600 dark:hover:bg-amber-700 dark:focus:ring-amber-800"
-        >
-          Submit
-        </button>
+        />
       </form>
     </>
   );
